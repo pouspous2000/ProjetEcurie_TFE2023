@@ -1,7 +1,6 @@
 // import './css/Navbar.css';
 import ElementNavbar from './Component/ElementNavbar';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -12,7 +11,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 function NavbarProprietaire() {
-    let compte = 'Admin'
+    let compte = 'Client'
 
     if (compte === 'Admin') {
         return (
@@ -29,10 +28,10 @@ function NavbarProprietaire() {
 
         )
     }
-    else if (compte === 'Employé') {
+    else if (compte === 'Client') {
         return (
 
-            <ul style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#AD9595' }} >
+            <ul style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#C18845' }} >
                 <ElementNavbar href="" icon="bi-calendar" text="Calendrier" />
                 <ElementNavbar href="profil" icon="bi-file-earmark-person" style={{ "fontSize": "2rem" }} text="Profil" />
                 <ElementNavbar href="cheval" icon="bi-activity" style={{ "fontSize": "2rem" }} text="Cheval" />
