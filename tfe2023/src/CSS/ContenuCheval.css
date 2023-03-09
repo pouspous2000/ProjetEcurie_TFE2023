@@ -35,3 +35,14 @@
     color:black;
 }
 /* {{ paddingTop: '2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', marginLeft: 'auto', marginRight: 'auto' }} */
+
+.menuIconeCheval{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.boutonM:hover{
+    background-color: #deddd7;
+
+}

@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 function PensionCheval(NomCheval) {
 
     let profilUtilisateur = "Client"
@@ -15,115 +15,109 @@ function PensionCheval(NomCheval) {
         { Type: "SupFoin", Nom: "Supplément foin", Prix: '50', Index: 3 },
         { Type: "SupGrain", Nom: "Grannulés Personnels", Prix: '50', Index: 4 }
     ]
+    let TypesSorties = [
+        { Type: 'Marcheur', Id: '1' },
+        { Type: 'Paddock', Id: '2' },
+        { Type: 'Marcheur', Id: '3' }
+    ]
+    let listTypesAditifs = ["SortiesSM", "SortiesWE", "SupFoin", "SupGrain"]
 
+
+    const [test, setTest] = useState('')
 
     let ChevalPension = [
-        { Id: 1, NomCheval: "Idem", Pension: "Pension Total", SortiesSM: "Non", SortiesWE: "Oui", SupFoin: "Oui", SupGrain: "Non" },
-        { Id: 2, NomCheval: "Opéra", Pension: "Pension Total", SortiesSM: "Non", SortiesWE: "Oui", SupFoin: "Oui", SupGrain: "Non" },
-        { Id: 3, NomCheval: "Aubade", Pension: "Pension Partiel", SortiesSM: "Non", SortiesWE: "Oui", SupFoin: "Oui", SupGrain: "Non" }
+        { NomCheval: "Idem", Pension: "Pension Total", SortiesSM: "Non", SortiesWE: "Oui", TypeSortieSM: '1', SupFoin: "Oui", SupGrain: "Non", TotalPension: "500" },
+        { NomCheval: "Opéra", Pension: "Pension Total", SortiesSM: "Non", SortiesWE: "Oui", TypeSortieSM: '2', SupFoin: "Oui", SupGrain: "Non", TotalPension: "500" },
+        { NomCheval: "Aubade", Pension: "Pension Partiel", SortiesSM: "Non", SortiesWE: "Oui", TypeSortieSM: '3', SupFoin: "Oui", SupGrain: "Non", TotalPension: "500" }
     ]
+    const [pension, setPension] = useState(500);
+    const [aditif, setAditif] = useState('')
     const [changementPrix, setChangementPrix] = useState('');
 
-
-    function changePrix(e) {
-        setChangementPrix(e.target.value);
+    function RemplirPension(e) {
+        // setPension(10)
+        console.log(e)
     }
 
 
+    useEffect(() => {
+        RemplirPension();
+    }, [])
+
+
     return (
+        <>
+            <h5 style={{ marginTop: '20px' }}> Choix des pensions </h5>
+            <table class="table" style={{color:'#736150'}}>
+                <tbody>
+                {profilUtilisateur === "Client" ?
+                   
+                        <>
+                            <tr>
+                            <td scope="row">Pension </td>
+                                <td>
+                                    <select className="form-control" style={{ borderRadius: "2px" }} id={`${NomCheval.NomCheval}formulePension`} onLoad={e => RemplirPension(e.target.value)} onChange={e => setPension(Number(e.target.value))}>
+                                        {
+                                            ChevalPension.filter(chevalPensionIndex => chevalPensionIndex.NomCheval === NomCheval.NomCheval).map((chevalPensionFilterIndex) =>
+                                                <>
+                                                    {
+                                                        TypesPensions.filter(typesPensionsIndex => typesPensionsIndex.Pension === chevalPensionFilterIndex.Pension).map(filterTypePension => (
+                                                            <option value={filterTypePension.Prix}>{filterTypePension.Pension}</option>
+                                                        ))
+                                                    }
+                                                    {
+                                                        TypesPensions.filter(typesPensionsIndex => typesPensionsIndex.Pension !== chevalPensionFilterIndex.Pension).map(filterTypePension => (
+                                                            <option value={filterTypePension.Prix}>{filterTypePension.Pension}</option>
+                                                        ))
+                                                    }
+                                                </>
+                                            )
+                                        }
+                                    </select>
+                                </td>
+                            </tr>
 
-        <table class="table">
-            <tbody>
-                <tr>
-                    <th scope="row">Pension</th>
-                    {profilUtilisateur === "Client" ?
-                        <td>
-                            <select id={`${NomCheval.NomCheval}formulePension`} className='select' onChange={changePrix}>
-                                {
-                                    ChevalPension.filter(chevalPensionIndex => chevalPensionIndex.NomCheval === NomCheval.NomCheval).map((chevalPensionFilterIndex) =>
-                                        <>
-                                            <option value={chevalPensionFilterIndex.Pension}>{chevalPensionFilterIndex.Pension}</option>
+
+                            <h5 style={{ marginTop: '20px'}}> Choix des aditifs </h5>
+
+                            <tr>
+                                <td>
+                                        {
+                                            listTypesAditifs.map((listTypesAditifsMap)=>
+                                            <>
                                             {
-                                                TypesPensions.filter(typesPensionsIndex => typesPensionsIndex.Pension !== chevalPensionFilterIndex.Pension).map(filterTypePension => (
-                                                    <option value={filterTypePension.Pension}>{filterTypePension.Pension}</option>
-                                                ))
+                                                ChevalPension.filter(chevalPensionIndex => chevalPensionIndex.NomCheval === NomCheval.NomCheval).map((chevalPensionFilterIndex) =>
+                                                <div>Coucou </div>
+                                                )
                                             }
+                                            </>
+                                            )
+                                        }
+                                </td>
+                            </tr>
 
-                                        </>
-                                    )
-                                }
-                            </select>
 
 
+                            <tr>
+                                <th>Total :  </th>
+                                <tr></tr>
+                                <td style={{ float: 'right' }}>
+                                    {pension}€
 
-                        </td>
+                                </td>
+                            </tr>
+
+                        </>
                         :
-                        <td>
-                            {ChevalPension.filter(chevalPensionIndex => chevalPensionIndex.NomCheval === NomCheval.NomCheval).map((chevalPensionFilterIndex) =>
-                                chevalPensionFilterIndex.Pension
-                            )}
-                        </td>
-
-
+                        <div>Coucou </div>
                     }
-                    <td>
-                        {TypesPensions.filter(TypePensionFiltre => changementPrix === TypePensionFiltre.Pension).map((TypePensionFiltreIndex) =>
-                            '+ ' + TypePensionFiltreIndex.Prix + '€ '
-                        )}
 
-                    </td>
-
-                </tr>
+                </tbody>
 
 
-                {TypesAditifs.map((typesAditifsIndex) =>
-                    <>
-
-
-
-                        <tr>
-
-                            <th scope="row">{typesAditifsIndex.Nom}</th>
-
-
-                            {ChevalPension.filter(chevalPensionIndex => chevalPensionIndex.NomCheval === NomCheval.NomCheval).map((chevalPensionFilterIndex) =>
-                                <>
-
-
-                                    <td>
-                                        <select>
-                                            <option value='oui'>Oui</option>
-                                        </select>
-
-                                    </td>
-                                </>
-
-
-
-                            )}
-
-
-                            <td> + {typesAditifsIndex.Prix}€</td>
-
-                        </tr>
-                    </>
-                )}
-                <tr>
-                    <th>Total : </th>
-                    <td></td>
-                    <td>
-                        {TypesPensions.filter(TypePensionFiltre => changementPrix === TypePensionFiltre.Pension).map((TypePensionFiltreIndex) =>
-                            TypePensionFiltreIndex.Prix + '€ '
-                        )}
-
-                    </td>
-                </tr>
-
-
-            </tbody>
-           
-
-        </table>
+            </table >
+        </>
     )
+
 }
 export default PensionCheval; 

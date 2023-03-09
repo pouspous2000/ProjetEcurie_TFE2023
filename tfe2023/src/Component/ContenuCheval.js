@@ -1,5 +1,5 @@
 
-import {useState } from 'react';
+import { useState } from 'react';
 
 import '../CSS/ContenuCheval.css';
 
@@ -9,11 +9,12 @@ import C from '../Img/C.png'
 
 import PensionCheval from './PensionCheval';
 import InfoCheval from './InfoCheval';
+import HoraireCheval from './HoraireCheval';
 
 
 function ContenuCheval({ NomCheval }) {
 
-   
+
 
     let [display, setDisplay] = useState('apparait');
     let [clique, setClique] = useState('');
@@ -47,48 +48,47 @@ function ContenuCheval({ NomCheval }) {
 
     return (
 
-        <div class="tab-pane fade" id={`${NomCheval}`} role="tabpanel" aria-labelledby={`${NomCheval}-tab`} style={{ backgroundColor: "#DDE2C6", padding:'2rem' }}>
-            {display !== 'apparait' && <button className='buttonRetour' onClick={() => Affichage()}> <i className="bi bi-list buttonR"></i> </button>}
+        <div class="tab-pane fade" id={`${NomCheval}`} role="tabpanel" aria-labelledby={`${NomCheval}-tab`} style={{ backgroundColor: 'white', padding: '2rem' }}>
+            
+            {display !== 'apparait' && <button className='buttonRetour' onClick={() => Affichage()}> <i style={{height:'2rem', width:'2rem'}}  className="bi bi-house-door buttonR"></i> </button>}
             {display === 'apparait' ?
 
 
                 <div id={display}>
-                    <button className='buttonMenu'   onClick={() => CacherMenuP()}>
-                        <img style={{ width: '100px', height: '100px'}} src={P} alt='pension' />
-                        <div style={{}}> Pension </div>
+                    <button style={{ marginTop: '1rem' }} className='buttonMenu' onClick={() => CacherMenuP()}>
+                        <i style={{ fontSize: '5rem', border: 'solid', borderRadius: '20px', padding: '10px', color: '#271503' }} class="bi bi-bag-fill boutonM"></i>
+                        <div className='menuIconeCheval'> Pension </div>
                     </button>
 
-                    <button  style={{ marginTop:'2rem'}} className='buttonMenu' onClick={() => CacherMenuI()}>
-                        <img  style={{ width: '100px', height: '100px'}} src={I} alt='information' />
-                        <div style={{ textAlign: 'center' }}> Information </div>
+                    <button style={{ marginTop: '2rem' }} className='buttonMenu' onClick={() => CacherMenuI()}>
+                        <i style={{ fontSize: '5rem', border: 'solid', borderRadius: '20px', padding: '10px', color: '#271503' }} className="bi bi-info-lg boutonM"></i>
+                        <div style={{ Color: '#F5F5DC' }} className='menuIconeCheval'> Information </div>
                     </button>
 
-                    <button style={{ marginTop:'2rem'}} className='buttonMenu' onClick={() => CacherMenuH()}>
-                        <img  style={{ width: '100px', height: '100px'}} src={C} alt='Calandrier' />
-                        <div style={{ textAlign: 'center' }}>Horaire </div>
+                    <button style={{ marginTop: '2rem' }} className='buttonMenu' onClick={() => CacherMenuH()}>
+                        <i style={{ fontSize: '5rem', border: 'solid', borderRadius: '20px', padding: '10px', color: '#271503' }} class="bi bi-calendar2-date boutonM"></i>
+                        <div className='menuIconeCheval'>Horaire </div>
                     </button>
                 </div>
 
                 :
+
                 clique === 'pension' ?
                     <PensionCheval NomCheval={NomCheval} />
-
-
                     :
                     clique === 'info' ?
-                        <InfoCheval NomCheval={NomCheval}/>
-                    :
-                    clique === 'horaire' && 
-                    <div> coucou je suis la page horaire </div>
-                        
-                }
+                        <InfoCheval NomCheval={NomCheval} />
+                        :
+                        clique === 'horaire'
+                        &&
+                        <HoraireCheval NomCheval={NomCheval} />
+            }
+        </div>
 
-                        </div>
-        
 
 
     )
 
 }
-            export default ContenuCheval;
+export default ContenuCheval;
 

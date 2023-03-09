@@ -1,0 +1,22 @@
+.input {
+    width: 150px;
+    border-radius: 5px;
+    border:#0000005d, 5px, thin;
+    font-size:16px;
+    
+}
+
+input:invalid+span:after {
+    content: 'Numéro Invalide';
+    color: hwb(4 9% 38% / 0.649);
+}
+
+input:valid+span:before{
+    border-color: #009000;
+    
+}
+
+  
+
+
+  
