@@ -11,19 +11,19 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 function NavbarProprietaire() {
-    let compte = 'Client'
+    let compte = 'Admin'
 
     if (compte === 'Admin') {
         return (
 
 
-            <ul style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#58340D' }} >
+            <ul style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#271503', height: '4rem' }} >
                 <ElementNavbar href="" icon="bi-calendar" text="Calendrier" />
                 <ElementNavbar href="factures" icon="bi-file-earmark-text" style={{ "fontSize": "2rem" }} text="Factures" />
                 <ElementNavbar href="communaute" icon="bi-people" style={{ "fontSize": "2rem" }} text="Communauté" />
                 <ElementNavbar href="stockage" icon="bi-clipboard-data" style={{ "fontSize": "2rem" }} text="Stockage" />
                 <ElementNavbar href="rs" icon="bi-postage-heart" style={{ "fontSize": "2rem" }} text="Réseau Social" />
-                <ElementNavbar href="parametre" icon="bi-gear" style={{ "fontSize": "2rem" }} text="Paramètre" />
+                <ElementNavbar href="parametreAdmin" icon="bi-gear" style={{ "fontSize": "2rem" }} text="Paramètre" />
             </ul>
 
         )
@@ -43,7 +43,7 @@ function NavbarProprietaire() {
     }
     else {
         return (
-            <ul style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#AD9595' }} >
+            <ul style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#271503', height: '4rem' }}>
                 <ElementNavbar href="" icon="bi-calendar" text="Calendrier" />
                 <ElementNavbar href="rs" icon="bi-postage-heart" style={{ "fontSize": "2rem" }} text="Réseau Social" />
                 <ElementNavbar href="communaute" icon="bi-people" style={{ "fontSize": "2rem" }} text="Communauté" />

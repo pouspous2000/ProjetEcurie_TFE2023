@@ -36,7 +36,7 @@ function PensionCheval(NomCheval) {
 
     function RemplirPension(e) {
         // setPension(10)
-        console.log(e)
+   
     }
 
 

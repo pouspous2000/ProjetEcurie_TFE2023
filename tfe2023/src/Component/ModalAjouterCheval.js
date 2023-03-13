@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import BoutonEnvoyer from "./ButtonEnvoyer";
-import '../CSS/Modal.css';
+import '../CSS/ModalAjouterCheval.css';
 
-function Modal() {
+function ModalAjouterCheval() {
 
     let TypesPensions = [
         { Pension: "Pension Total", Prix: "500", Description: "La pension total comprend, 3 repas de grannulé par jour, le box fait tous les jours ainsi qu'une ration de foin matin et soir" },
@@ -65,14 +65,15 @@ function Modal() {
                             <div class="form-group">
                                 <h6 style={{ marginTop: '1rem' }} for="exampleFormControlSelect2">Choix des Additifs</h6>
                                 {
-                                    TypesAditifs.map((typesAditifsIndex, numero) =>
+                                    TypesAditifs.map((typesAditifsIndex) =>
+                                      
                                         <>
 
                                             <div style={{ float: 'left' }}>{typesAditifsIndex.Nom}
                                                 <p style={{ fontStyle: 'italic', float: 'right', color: 'lightgray', marginLeft: '2px' }}>  ( {typesAditifsIndex.Prix} €) </p>
                                             </div>
                                             <select class="form-control" style={{ float: "right", marginBottom: '1rem' }} required onChange={e => setAditif(Number(aditif) + Number(e.target.value))}>
-                                                {/* <option style={{ color: '#808080' }} selected disabled hidden > Selectionnez une option </option> */}
+                                                
                                                 <option value={typesAditifsIndex.Prix}>
                                                     Oui
                                                 </option>
@@ -103,7 +104,7 @@ function Modal() {
                     </div>
                     <div class="modal-footer">
                         
-                        <BoutonEnvoyer/>
+                        <BoutonEnvoyer Text='Enregistrer'/>
                     </div>
                 </div>
             </div>
@@ -111,4 +112,4 @@ function Modal() {
 
     )
 }
-export default Modal; 
+export default ModalAjouterCheval; 

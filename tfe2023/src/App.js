@@ -18,6 +18,7 @@ import Cheval from './Cheval.js';
 import Profil from './Profil.js';
 import Parametre from './Parametre.js';
 import ReseauSocial from './ResauSocial.js';
+import ParametresAdmin from './ParamètresAdmin';
 
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route path='/profil' exact element={<Profil />} />
           <Route path='/cheval' exact element={<Cheval />} />
           <Route path='/stockage' exact element={<GestionStocks />} />
+          <Route path='/parametreAdmin' exact element={<ParametresAdmin/>}/>
         </Routes>
       </Router>
  

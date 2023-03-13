@@ -120,7 +120,7 @@ function InfoCheval({ NomCheval }) {
                 <NavLink onClick={onButtonClick} >Règlement intérieur</NavLink>
             </div>
 
-            <BoutonEnvoyer/>
+            <BoutonEnvoyer Text='Enregistrer'/>
         </>
     )
 }
