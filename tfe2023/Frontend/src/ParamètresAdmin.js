@@ -47,7 +47,7 @@ function ParametresAdmin() {
                 </button>
 
             </h3>
-            <ModalAjouterPension />
+            <ModalAjouterPension>
 
             {
                 TypesPensions.map((TypesPensionsMap) =>
@@ -69,7 +69,7 @@ function ParametresAdmin() {
                     <>
                         {
                             IdSorties.filter(IdSortiesFilter => IdSortiesFilter.Index === TypesSortiesMap.Index).map((IdSortiesFilterMap) =>
-                                <CardSorties Nom={TypesSortiesMap.Nom} PrixMois={TypesSortiesMap.PrixMois} PrixUnite={TypesSortiesMap.PrixUnite} Index={IdSortiesFilterMap.Nom} DebutJ={TypesSortiesMap.DebutJ} DebutM={TypesSortiesMap.DebutM} FinJ={TypesSortiesMap.FinJ} FinM={TypesSortiesMap.FinM} />
+                                <CardSorties key={Math.random().toString()} Nom={TypesSortiesMap.Nom} PrixMois={TypesSortiesMap.PrixMois} PrixUnite={TypesSortiesMap.PrixUnite} Index={IdSortiesFilterMap.Nom} DebutJ={TypesSortiesMap.DebutJ} DebutM={TypesSortiesMap.DebutM} FinJ={TypesSortiesMap.FinJ} FinM={TypesSortiesMap.FinM} />
                             )
                         }
                     </>
