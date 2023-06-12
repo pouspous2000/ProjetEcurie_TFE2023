@@ -1,0 +1,23 @@
+.navbarStyle {
+    height: 4rem;
+    background-color: #271503;
+    width: 100%
+}
+
+
+.toggleNavbar{
+    color: #F5F5DC !important;
+    font-size :2rem !important;
+    margin-left: 10px !important;
+    margin-right : 10px !important;
+}
+
+/* .nav-pills .nav-link.active {
+    background-color: #DDE2C6 !important;
+    color:#5B3413 !important; 
+} */
+
+.nav-link.active {
+    color: #fff !important;
+    background: black !important;
+  }

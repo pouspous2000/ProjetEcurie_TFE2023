@@ -1,0 +1,27 @@
+.iconeStyle {
+    color: #F5F5DC !important;
+    font-size :2rem !important;
+    margin-left: 10px !important;
+    margin-right : 10px !important;
+}
+
+.iconeStyle:hover{
+    color: rgb(240, 215, 21) !important;
+    margin-top: 5px  !important;
+}
+
+/* .nav-link.active{
+    background-color:#DDE2C6 !important;
+    color:#5B3413 !important; 
+} */
+
+.nav-pills .nav-link.active {
+    background-color: #DDE2C6 !important;
+    color:#5B3413 !important; 
+}
+
+/* .nav-pills .nav-link.active .nav-pills .show>.nav-link {
+    color: #fff !important;
+    background: black !important;
+  } */
+
