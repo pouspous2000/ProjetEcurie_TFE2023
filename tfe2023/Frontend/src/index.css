@@ -13,3 +13,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Frontend/src/HorizontalNavbar/HorizontalNavbar.js */
+.topNavbar .nav-link.active {
+  background-color: #DDE2C6 !important;
+  color:#5B3413 !important; 
+}
+
+.topNavbar .nav-link.active:hover {
+  margin-top: 0px !important;
+}

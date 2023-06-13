@@ -1,14 +1,12 @@
 
-import { BrowserRouter as Router, Route, Routes, Redirect } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import HorizontalNavbar from '../src/HorizontalNavbar/HorizontalNavbar';
-
 import React from 'react';
 import './App.css';
 
-import Calendrier from './Calendrier';
-import Communaute from './Communaute.js';
-import ParametreAdmin from './ParametreAdmin';
+import Calendrier from './Calandrier/Calendrier';
+import Communaute from './Communaute/Communaute';
+import ParametreAdmin from './ParametreAdmin/ParametreAdmin';
 
 function App() {
   return (
@@ -22,5 +20,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
