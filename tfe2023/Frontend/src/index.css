@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F5F5DC;
+  /* background-color: #F5F5DC; */
   /* background-color: #bebc90; */
 }
 
@@ -16,10 +16,12 @@ code {
 
 /* Frontend/src/HorizontalNavbar/HorizontalNavbar.js */
 .topNavbar .nav-link.active {
-  background-color: #DDE2C6 !important;
+  background-color: #f3faf6 !important;
   color:#5B3413 !important; 
+  margin-bottom: 10px !important;
 }
 
 .topNavbar .nav-link.active:hover {
   margin-top: 0px !important;
 }
+

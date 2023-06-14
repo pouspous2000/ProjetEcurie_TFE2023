@@ -1,0 +1,32 @@
+.VerticalNavbar{
+    height: 100%;
+    position: fixed;
+    left: 0;
+    height: auto;
+    min-height: 100%;
+}
+
+
+.toggleNavbar{
+    color: #0d0d06 !important;
+    font-size :2rem !important;
+    margin-left: 10px !important;
+    margin-right : 10px !important;
+    background-color: none;
+
+}
+
+.button{
+    border:none;
+    background-color: transparent !important;
+    font-size: large;
+    color:rgb(255, 246, 234)
+}
+
+.button:hover{
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+
+

@@ -1,5 +1,5 @@
 
-import styles from '../HorizontalNavbar.module.css'
+import styles from '../Component/ElementHorizontalNavbar.module.css'; 
 import Nav from 'react-bootstrap/Nav';
 
 function ElementHorizontalNavbar({href, icone}) {

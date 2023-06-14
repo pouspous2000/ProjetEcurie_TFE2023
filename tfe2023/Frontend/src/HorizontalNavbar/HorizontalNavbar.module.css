@@ -1,12 +1,13 @@
-.iconeStyle {
+.navbarStyle {
+    height: 4rem;
+    background-color: #271503;
+    width: 100%
+}
+
+
+.toggleNavbar{
     color: #F5F5DC !important;
     font-size :2rem !important;
     margin-left: 10px !important;
     margin-right : 10px !important;
 }
-
-.iconeStyle:hover{
-    color: rgb(240, 215, 21) !important;
-    margin-top: 5px  !important;
-}
-

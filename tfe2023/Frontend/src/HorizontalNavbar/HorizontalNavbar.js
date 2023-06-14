@@ -1,6 +1,6 @@
 import ElementHorizontalNavbar from './Component/ElementHorizontalNavbar';
 import Nav from 'react-bootstrap/Nav';
-import styles from './Component/ElementHorizontalNavbar.module.css'
+import styles from '../HorizontalNavbar/HorizontalNavbar.module.css'
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
