@@ -31,34 +31,27 @@ function NavbarSidebar() {
             (subCategory) => subCategory.categorie === activeCategory
         );
         return (
-      
-              
-                    <Nav className={`col-2 col-sm-2 col-md-2 col-lg-1 justify-content-center mr-auto ${styles.sidebarStyle}`}>
-                        <Stack gap={3} style={{ fontSize: '20px' }} className="p-2">
-                            {categories.filter((categoryFilter) => categoryFilter.id === activeCategory).map((categoryMap) =>
-                                <div style={{ marginLeft: 'auto', marginRight: 'auto' }} key={categoryMap.id}>
-                                    {categoryMap.name}
-                                </div>
-                            )}
-                            {subCategoryList.map((subCategory) => (
-                                <Nav.Item key={subCategory.id}>
-                                    <div
-                                        className={`${activeSubCategory === subCategory.id ? 'active' : ''} ${styles.button} p-2`}
-                                        onClick={() => handleSubCategoryClick(subCategory.id)}
-                                    >
-                                        {subCategory.id}
-                                    </div>
-                                </Nav.Item>
-                            ))}
-                        </Stack>
-                    </Nav>
+            <Nav className={`col-3 col-sm-2 col-md-2 col-lg-2 ${styles.sidebarStyle}`}>
+                <Stack gap={3} style={{ fontSize: '20px' }} className="p-2">
+                    {categories.filter((categoryFilter) => categoryFilter.id === activeCategory).map((categoryMap) =>
+                        <div style={{ marginLeft: 'auto', marginRight: 'auto' }} key={categoryMap.id}>
+                            {categoryMap.name}
+                        </div>
+                    )}
+                    {subCategoryList.map((subCategory) => (
+                        <Nav.Item key={subCategory.id}>
+                            <div
+                                className={`${activeSubCategory === subCategory.id ? 'active' : ''} ${styles.button} p-2`}
+                                onClick={() => handleSubCategoryClick(subCategory.id)}
+                            >
+                                {subCategory.id}
+                            </div>
+                        </Nav.Item>
+                    ))}
+                </Stack>
+            </Nav>
         );
     };
-
-
-    //       <Nav className="mr-auto">
-    //         {/* Vos éléments de navigation ici */}
-    //       </Nav>
 
     const renderContent = () => {
         const subCategoryContent = subCategories.find(
@@ -66,19 +59,19 @@ function NavbarSidebar() {
                 subCategory.categorie === activeCategory && subCategory.id === activeSubCategory
         );
         return (
-            <div className="col-9 col-sm-9 col-md-9 col-lg d-flex justify-content-center align-items-center">
-                {subCategoryContent && subCategoryContent.id === activeSubCategory && (
-                    <div>{subCategoryContent.content}</div>
-                )}
+            <div className="container-fluid d-flex flex-column">
+                <div className="row">
+                    {subCategoryContent && subCategoryContent.id === activeSubCategory && (
+                        <div className="col-12 p-0">{subCategoryContent.content}</div>
+                    )}
+                </div>
             </div>
         );
     };
 
     return (
         <>
-
             <Nav className={`justify-content-center grid text-center ${styles.navbarStyle}`}>
-
                 {categories.map((category) => (
                     <Nav.Item key={category.id} className={styles.iconeStyle}>
                         <button
@@ -90,16 +83,16 @@ function NavbarSidebar() {
                     </Nav.Item>
                 ))}
             </Nav>
-            <Container>
-                <Row className="d-flex">
-                    <Col xs={3} sm={2} md={2} lg={1} className="w-1 p-0">
-                        {renderSubCategories()}
-                    </Col>
-                    <Col className="w-1 p-3">
+
+            <div className="container-fluid min-vh-100 d-flex flex-column">
+                <div className="row flex-grow-1">
+                    {renderSubCategories()}
+
+                    <div className="col p-0">
                         {renderContent()}
-                    </Col>
-                </Row>
-            </Container>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
