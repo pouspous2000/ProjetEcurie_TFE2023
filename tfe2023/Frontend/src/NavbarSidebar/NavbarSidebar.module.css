@@ -1,0 +1,43 @@
+.navbarStyle {
+    height: 4rem;
+    background-color:  #353535;
+    width: 100%
+}
+
+.sidebarStyle{
+    background-color: #B0C0D5 !important;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    height: auto;
+    min-height: 100%;
+}
+
+.iconeStyle {
+    color: #F5F5DC !important;
+    font-size :2rem !important;
+    border:none;
+    background-color: transparent !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+.iconeStyle:hover{
+    color: rgba(217, 199, 65, 0.662) !important;
+    margin-top: 3px  !important;
+}
+
+
+.button{
+    border:none;
+    background-color: transparent !important;
+    font-size: large;
+    color:rgb(16, 13, 11);
+    text-align: center;
+}
+
+.button:hover{
+    text-decoration: underline;
+}
+
